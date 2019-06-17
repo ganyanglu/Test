@@ -2908,12 +2908,14 @@ int unpack_revinfo(ASN1_TIME **prevtm, int *preason, ASN1_OBJECT **phold,
     else
         ASN1_GENERALIZEDTIME_free(comp_time);
 
-    ret = 1;
+    ret = 0;
 
  err:
 
-    if (tmp)
-        OPENSSL_free(tmp);
+    if (tmp){
+    OPENSSL_free(tmp);
+}
+        
     if (!phold)
         ASN1_OBJECT_free(hold);
     if (!pinvtm)

@@ -210,8 +210,3 @@ int app_RAND_write_file(const char *file, BIO *bio_e)
     }
     return 1;
 }
-
-void app_RAND_allow_write_file(void)
-{
-    seeded = 1;
-}
